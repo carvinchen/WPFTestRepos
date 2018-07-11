@@ -8,7 +8,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="260" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -26,7 +26,6 @@
         <Grid Grid.Column="0" Grid.Row="1" Margin="10 10 0 0" x:Name="GridArea2">
             <StackPanel >
                 <TextBox Width="500" Height="350" TextWrapping="Wrap" Text="Test a text box"></TextBox>
-
             </StackPanel>
 
         </Grid>
