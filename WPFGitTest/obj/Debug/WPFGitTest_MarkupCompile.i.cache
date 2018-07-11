@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\Install\Lernen\OOP\GitRepository\GitForTest\WPFGitTest\WPFGitTest\obj\Debug\
+F:\Install\Lernen\OOP\GitHubRepository\WPFTestRepos\WPFGitTest\obj\Debug\
 WPFGitTest
 none
 false
 DEBUG;TRACE
-F:\Install\Lernen\OOP\GitRepository\GitForTest\WPFGitTest\WPFGitTest\App.xaml
-11151548125
+F:\Install\Lernen\OOP\GitHubRepository\WPFTestRepos\WPFGitTest\App.xaml
+2-901630367
 
-9113010619
-12-1401562060
-MainWindow.xaml;
+122013941939
+141012385901
+CustomUserControls\uc_GitView.xaml;MainWindow.xaml;
 
-False
+True
 
