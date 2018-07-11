@@ -22,6 +22,13 @@
                 <Button x:Name="btnOpenFolder" Width="30" Height="26" Margin="5 0 0 0" Content="..." ></Button>
             </StackPanel>
         </Grid>
-            
+
+        <Grid Grid.Column="0" Grid.Row="1" Margin="10 10 0 0" x:Name="GridArea2">
+            <StackPanel >
+                <TextBox Width="500" Height="350" TextWrapping="Wrap" Text="Test a text box"></TextBox>
+
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </UserControl>
