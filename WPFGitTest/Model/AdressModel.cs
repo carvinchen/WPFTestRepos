@@ -14,5 +14,16 @@ namespace WPFGitTest.Model
         private string _houseNr;
         private string _zipCode;
         private string _city;
+
+        public string ID {
+
+            get { return _id;  }
+            set {
+                if (_id != value)
+                {
+                    _id = value;
+                }
+            }
+        }
     }
 }
