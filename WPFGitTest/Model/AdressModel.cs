@@ -14,6 +14,7 @@ namespace WPFGitTest.Model
         private string _houseNr;
         private string _zipCode;
         private string _city;
+        private string _country;
 
         public string ID {
 
@@ -25,5 +26,13 @@ namespace WPFGitTest.Model
                 }
             }
         }
+
+        //C# 6.0 new feature: A initializer to an auto-property DOESNT WORK with VS 2013...
+        //public string Country { get; set; } = "Deutschland";
+
+
+
+
+
     }
 }
