@@ -6,7 +6,7 @@
              xmlns:Model="clr-namespace:WPFGitTest.Model"
              xmlns:ViewModel="clr-namespace:WPFGitTest.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="800">
+             d:DesignHeight="800" d:DesignWidth="1200">
     
     <UserControl.DataContext>
         <ViewModel:AdressViewModel/>
@@ -15,7 +15,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="260" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -25,48 +25,61 @@
 
         <Grid Grid.Column="0" Grid.Row="0" Margin="10 10 0 0" x:Name="GridFolderSelection">
             <StackPanel Orientation="Horizontal">
-                <TextBox x:Name="SelectedFolderPath" Width="360" Height="26" Text="Path...For ... Test"></TextBox>
-                <Button x:Name="btnOpenFolder" Width="30" Height="26" Margin="5 0 0 0" Content="..." ></Button>
+                <TextBox x:Name="SelectedFolderPath" Width="350" Height="26" Text="Path...For ... Test"></TextBox>
+                <Button x:Name="btnOpenFolder" Width="35" Height="26" Margin="5 0 0 0" Content="open" ></Button>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Column="0" Grid.Row="1" Margin="10 10 0 0" x:Name="GridArea2">
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Orientation="Vertical" >
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10" >
-                        <Label Content="Firstname" Width="60" Margin="0 0 10 0" />
-                        <TextBox x:Name="FirstnameTB" Width="300" Height="26" Text="Firstname..." VerticalContentAlignment="Center" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                        <Label Content="Lastname" Width="60" Margin="0 0 10 0" />
-                        <TextBox x:Name="LastnameTB" Width="300" Height="26" Text="Lastname..." VerticalContentAlignment="Center" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                        <Label Content="Street" Width="60" Margin="0 0 10 0" />
-                        <TextBox x:Name="strTB" Width="150" Height="26" Text="Street..." VerticalContentAlignment="Center" />
-                        <Label Content="HouseNr." Width="60" Margin="0 0 10 0" />
-                        <ComboBox x:Name="houseNrComB" Width="80" SelectedItem="{Binding Path=SelectedHouseNumber, Mode=TwoWay}" ItemsSource="{Binding Path=ListOfHouseNrLing}" VerticalContentAlignment="Center" Text="{Binding ListOfHouseNrLing[0]}" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
-                        <Label Content="ZipCode" Width="60" Margin="0 0 10 0" />
-                        <TextBox x:Name="zipcodeTB" Width="120" Height="26" Text="ZipCode..." VerticalContentAlignment="Center" />
-                        <Label Content="City" Width="60" Margin="0 0 10 0" />
-                        <TextBox x:Name="cityTB" Width="110" Height="26" Text="City..." VerticalContentAlignment="Center" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 10" >
-                        <Label Content="Country" Width="60" Margin="0 0 10 0" />
-                        <TextBox x:Name="countryTB" Width="300" Height="26" Text="Country..." VerticalContentAlignment="Center" />
-                    </StackPanel>
-                    
+            <StackPanel Orientation="Vertical" >
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10" >
+                    <Label Content="Firstname" Width="60" Margin="0 0 10 0" />
+                    <TextBox x:Name="FirstnameTB" Width="320" Height="26" Text="Firstname..." VerticalContentAlignment="Center" />
                 </StackPanel>
-
-                <StackPanel Margin="10 0 10 0" >
-                    <TextBox Width="360" Height="300" TextWrapping="Wrap" Text="Test a text box"></TextBox>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                    <Label Content="Lastname" Width="60" Margin="0 0 10 0" />
+                    <TextBox x:Name="LastnameTB" Width="320" Height="26" Text="Lastname..." VerticalContentAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                    <Label Content="Street" Width="60" Margin="0 0 10 0" />
+                    <TextBox x:Name="strTB" Width="160" Height="26" Text="Street..." VerticalContentAlignment="Center" />
+                    <Label Content="HouseNr." Width="60" Margin="0 0 10 0" />
+                    <ComboBox x:Name="houseNrComB" Width="90" SelectedItem="{Binding Path=SelectedHouseNumber, Mode=TwoWay}" ItemsSource="{Binding Path=ListOfHouseNrLing}" VerticalContentAlignment="Center" Text="{Binding ListOfHouseNrLing[0]}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
+                    <Label Content="ZipCode" Width="60" Margin="0 0 10 0" />
+                    <TextBox x:Name="zipcodeTB" Width="130" Height="26" Text="ZipCode..." VerticalContentAlignment="Center" />
+                    <Label Content="City" Width="60" Margin="0 0 10 0" />
+                    <TextBox x:Name="cityTB" Width="120" Height="26" Text="City..." VerticalContentAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 10" >
+                    <Label Content="Country" Width="60" Margin="0 0 10 0" />
+                    <TextBox x:Name="countryTB" Width="320" Height="26" Text="Country..." VerticalContentAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0 0 10 0" >
+                    <Label Content="About" Width="60" Margin="0 0 0 5" HorizontalAlignment="Left" />
+                    <TextBox Width="390" Height="300" TextWrapping="Wrap" Text="Test a text box"></TextBox>
                 </StackPanel>
 
             </StackPanel>
-            
 
         </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1" Margin="20 10 0 0" x:Name="GridAreaRightMiddle">
+            <DataGrid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" IsReadOnly="True"
+                      CanUserResizeRows="False" AutoGenerateColumns="False" VerticalAlignment="Top" ItemsSource="{Binding Path=AdressVMList}" >
+                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Character ID" Binding="{Binding Path=PlayerID}" Width="300" />
+                    <DataGridTextColumn Header="Name" Binding="{Binding Path=PlayerName}" Width="90" />
+                    <DataGridTextColumn Header="Gender" Binding="{Binding Path=PlayerGender}" Width="60" />
+                    <DataGridTextColumn Header="Race" Binding="{Binding Path=PlayerRace}" Width="100" />
+                    <DataGridTextColumn Header="Homeplanet" Binding="{Binding Path=PlayerHomeplanet}" Width="90" />
+                    <DataGridTextColumn Header="Lifeform" Binding="{Binding Path=PlayerLifeform}" Width="90" />
+                </DataGrid.Columns>
+
+            </DataGrid>
+        </Grid>
+        
     </Grid>
 </UserControl>

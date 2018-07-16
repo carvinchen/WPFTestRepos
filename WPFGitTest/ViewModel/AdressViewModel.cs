@@ -6,6 +6,7 @@ using System.Xml.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Collections.ObjectModel;
 using WPFGitTest.Model;
 
 namespace WPFGitTest.ViewModel
@@ -24,10 +25,33 @@ namespace WPFGitTest.ViewModel
         //private string[] _istOfHouseNrStr = new string[listOfHouseNumber.Length];
         private string[] _listOfHouseNrStr = new string[] { };
 
+        private string _playerID;
+        private string _playerName;
+        private string _playerGender;
+        private string _playerRace;
+        private string _playerHomeplanet;
+        private string _playerLifeform;
+
+        private ObservableCollection<AdressViewModel> _listOfVMAdress = new ObservableCollection<AdressViewModel>();
+
+        public AdressViewModel() { 
+        
+        }
+
+
+        public AdressViewModel(string pID, string pName, string pGender, string pRace, string pHomeplanet, string pLifeForm)
+        {
+            PlayerID = pID;
+            PlayerName = pName;
+            PlayerGender = pGender;
+            PlayerRace = pRace;
+            PlayerHomeplanet = pHomeplanet;
+            PlayerLifeform = pLifeForm;
+
+        } 
 
         public AdressModel AdressModel
         {
-
             get { return _adressModel; }
             set
             {
@@ -38,6 +62,100 @@ namespace WPFGitTest.ViewModel
                 }
             }
         }
+
+        public ObservableCollection<AdressViewModel> AdressVMList
+        {
+            get { return _listOfVMAdress; }
+            set
+            {
+                if (_listOfVMAdress != value)
+                {
+                    _listOfVMAdress = value;
+                    OnPropertyChanged("AdressVMList");
+                }
+            }
+        }
+
+
+        //Additional data of game character
+        public string PlayerID
+        {
+            get { return _playerID; }
+            set
+            {
+                if (_playerID != value)
+                {
+                    _playerID = value;
+                    OnPropertyChanged("PlayerID");
+                }
+            }
+        }
+
+        public string PlayerName
+        {
+            get { return _playerName; }
+            set
+            {
+                if (_playerName != value)
+                {
+                    _playerName = value;
+                    OnPropertyChanged("PlayerName");
+                }
+            }
+        }
+
+        public string PlayerGender
+        {
+            get { return _playerGender; }
+            set
+            {
+                if (_playerGender != value)
+                {
+                    _playerGender = value;
+                    OnPropertyChanged("PlayerGender");
+                }
+            }
+        }
+
+        public string PlayerRace
+        {
+            get { return _playerRace; }
+            set
+            {
+                if (_playerRace != value)
+                {
+                    _playerRace = value;
+                    OnPropertyChanged("PlayerRace");
+                }
+            }
+        }
+
+        public string PlayerHomeplanet
+        {
+            get { return _playerHomeplanet; }
+            set
+            {
+                if (_playerHomeplanet != value)
+                {
+                    _playerHomeplanet = value;
+                    OnPropertyChanged("PlayerHomeplanet");
+                }
+            }
+        }
+
+        public string PlayerLifeform
+        {
+            get { return _playerLifeform; }
+            set
+            {
+                if (_playerLifeform != value)
+                {
+                    _playerLifeform = value;
+                    OnPropertyChanged("PlayerLifeform");
+                }
+            }
+        }
+
 
         //Using getter methode
         public string[] ListOfHouseNr
@@ -61,7 +179,6 @@ namespace WPFGitTest.ViewModel
         //Using LING features
         public string[] ListOfHouseNrLing
         {
-
             get
             {
 
@@ -118,7 +235,6 @@ namespace WPFGitTest.ViewModel
                             (from character in gData.Elements("CharacterDataGroup").Elements("CharacterData")
                              select character).Count();
 
-
                         //Console.WriteLine("File has " + charCount.ToString() + " Character data.");
 
                         if (characterData.Count() > 0)
@@ -134,9 +250,27 @@ namespace WPFGitTest.ViewModel
 
                                         characterDataArray[i] = characterData.ToArray()[i];
                                         Console.WriteLine("Element Value: " + characterData.ToArray()[i].Element("CharacterID").Value);
+
+                                        AdressViewModel listOfAdressVM = new AdressViewModel(
+                                            characterData.ToArray()[i].Element("CharacterID").Value,
+                                            characterData.ToArray()[i].Element("Name").Value,
+                                            characterData.ToArray()[i].Element("Gender").Value,
+                                            characterData.ToArray()[i].Element("Races").Value,
+                                            characterData.ToArray()[i].Element("Homeplanet").Value,
+                                            characterData.ToArray()[i].Element("LifeForm").Value
+                                            );
+
+                                        if (!AdressVMList.Contains(listOfAdressVM))
+                                        {
+                                            AdressVMList.Add(listOfAdressVM);
+                                        }
                                     }
                                 }
                             }
+
+                            //
+                            
+
                         }
 
                     }
@@ -165,8 +299,6 @@ namespace WPFGitTest.ViewModel
                 }
             }
         }
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
