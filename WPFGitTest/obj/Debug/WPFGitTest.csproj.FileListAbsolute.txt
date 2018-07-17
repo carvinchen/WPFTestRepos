@@ -33,3 +33,6 @@ F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\obj\Debug
 F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\obj\Debug\WPFGitTest.g.resources
 F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\obj\Debug\WPFGitTest.Properties.Resources.resources
 F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\obj\Debug\WPFGitTest.csproj.GenerateResource.Cache
+F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\bin\Debug\Database\WPFDatabase.mdf
+F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\bin\Debug\Database\WPFDatabase_log.ldf
+F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\obj\Debug\WPFGitTest_Content.g.cs

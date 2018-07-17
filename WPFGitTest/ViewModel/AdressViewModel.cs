@@ -205,7 +205,7 @@ namespace WPFGitTest.ViewModel
             }
         }
 
-        //Function that handles and initializes the data from xml files for viewmodel
+        //Using LING: Function that handles and initializes the data from xml files for viewmodel
         public void XMLDataHandle(string filePath)
         {
 
@@ -260,7 +260,6 @@ namespace WPFGitTest.ViewModel
                                     }
                                 }
                             }
-
                         }
                     }
                     else
