@@ -34,10 +34,13 @@ namespace WPFGitTest.ViewModel
 
         private ObservableCollection<AdressViewModel> _listOfVMAdress = new ObservableCollection<AdressViewModel>();
 
-        public AdressViewModel() { 
-        
-        }
+        public AdressViewModel() {
 
+            if (characterDataArray.Length <= 0)
+            {
+                XMLDataHandle(filePathName);
+            }
+        }
 
         public AdressViewModel(string pID, string pName, string pGender, string pRace, string pHomeplanet, string pLifeForm)
         {
@@ -75,7 +78,6 @@ namespace WPFGitTest.ViewModel
                 }
             }
         }
-
 
         //Additional data of game character
         public string PlayerID
@@ -156,7 +158,6 @@ namespace WPFGitTest.ViewModel
             }
         }
 
-
         //Using getter methode
         public string[] ListOfHouseNr
         {
@@ -181,7 +182,6 @@ namespace WPFGitTest.ViewModel
         {
             get
             {
-
                 if (listOfHouseNumber.Length > 0)
                 {
                     _listOfHouseNrStr = new string[listOfHouseNumber.Length];
@@ -201,18 +201,11 @@ namespace WPFGitTest.ViewModel
                     }
                 }
 
-                //TODO: Call XML methode
-                if (characterDataArray.Length <= 0)
-                {
-                    XMLDataHandle(filePathName);
-                }
-
                 return _listOfHouseNrStr;
-
             }
         }
 
-        //Function that handle the data from xml files
+        //Function that handles and initializes the data from xml files for viewmodel
         public void XMLDataHandle(string filePath)
         {
 
@@ -249,7 +242,7 @@ namespace WPFGitTest.ViewModel
                                     {
 
                                         characterDataArray[i] = characterData.ToArray()[i];
-                                        Console.WriteLine("Element Value: " + characterData.ToArray()[i].Element("CharacterID").Value);
+                                        //Console.WriteLine("Element Value: " + characterData.ToArray()[i].Element("CharacterID").Value);
 
                                         AdressViewModel listOfAdressVM = new AdressViewModel(
                                             characterData.ToArray()[i].Element("CharacterID").Value,
@@ -268,11 +261,7 @@ namespace WPFGitTest.ViewModel
                                 }
                             }
 
-                            //
-                            
-
                         }
-
                     }
                     else
                     {
