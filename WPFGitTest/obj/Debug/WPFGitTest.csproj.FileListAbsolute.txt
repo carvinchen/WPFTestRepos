@@ -36,3 +36,6 @@ F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\obj\Debug
 F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\bin\Debug\Database\WPFDatabase.mdf
 F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\bin\Debug\Database\WPFDatabase_log.ldf
 F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\obj\Debug\WPFGitTest_Content.g.cs
+F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\bin\Debug\Autofac.dll
+F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\bin\Debug\Autofac.xml
+F:\Install\Lernen\OOP\GitHubRepository\WPFGitTestRepository\WPFGitTest\bin\Debug\NPoco.dll

@@ -3,10 +3,13 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
+using System.Data.Linq;
+using System.Data.Common;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using NPoco;
 using WPFGitTest.Model;
 
 namespace WPFGitTest.ViewModel
@@ -18,6 +21,7 @@ namespace WPFGitTest.ViewModel
 
         public static string filePath = Directory.GetCurrentDirectory();
         public static string defaultXMLFileName = @"..\..\files\SavingGameData_past.xml";
+        public static string defaultMDFDatabasename = @"..\..\Database\WPFDatabase.mdf";
         //public static string defaultXMLFileName = "testData.xml";
         public string filePathName = Path.Combine(filePath, defaultXMLFileName);
 
@@ -40,6 +44,10 @@ namespace WPFGitTest.ViewModel
             {
                 XMLDataHandle(filePathName);
             }
+
+            //Error ? because of IDatabase db = new Database("TerminPlan"); of the line 315
+            //DatabaseConnectorNPoco();
+            
         }
 
         public AdressViewModel(string pID, string pName, string pGender, string pRace, string pHomeplanet, string pLifeForm)
@@ -272,6 +280,41 @@ namespace WPFGitTest.ViewModel
                     Console.WriteLine("File NOT FOUND.");
                 }
             }
+        }
+
+        //TODO::: Using LING: get the data from local mdf database
+        //public void GetMDFDatabase(string databaseFilePath) {
+
+        //    if (string.IsNullOrEmpty(databaseFilePath))
+        //    {
+        //        if (File.Exists(databaseFilePath))
+        //        {
+        //            //From System.Data.Linq
+        //            DataContext db = new DataContext(databaseFilePath);
+
+        //            // Query for actor data of the world.  
+        //            IQueryable<ActorViewModel> custQuery =
+        //                from cust in db.
+        //                where cust.City == "London"
+        //                select cust;  
+        //        }
+        //    }
+        
+        //}
+
+
+        //Create DB connection and get db data by using NPoco
+
+        public void DatabaseConnectorNPoco() {
+
+            //Connect data to free remote database of db4free.net
+            string password = "huboode6DBmyPwd";
+            string connStr =
+                "server=db4free.net;user=huboodedbuser;database=huboodedb;port=3306;password=" + password;
+
+            IDatabase db = new Database("TerminPlan");
+            List<TerminModel> terminList = db.Fetch<TerminModel>("select id, ort, partner from TerminPlan");
+
         }
 
         public int SelectedHouseNumber
